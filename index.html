@@ -17,7 +17,7 @@
             height: 100vh;
             margin: 0;
             position: relative;
-            overflow: hidden; /* To ensure buttons don't go off the screen */
+            overflow: hidden;
         }
 
         h1 {
@@ -85,36 +85,11 @@
         const yesButton = document.querySelector('.yes-btn');
         const noButton = document.querySelector('.no-btn');
 
-        // Confetti effect when "Yes" is clicked
+        // Change background when "Yes" is clicked
         function yipeee() {
             alert("Yipeeee!");
-            confetti();
-        }
-
-        // Confetti function
-        function confetti() {
-            const duration = 5 * 1000;
-            const end = Date.now() + duration;
-
-            (function frame() {
-                // Generate random confetti on the page
-                const confettiEl = document.createElement('div');
-                confettiEl.style.position = 'absolute';
-                confettiEl.style.width = '10px';
-                confettiEl.style.height = '10px';
-                confettiEl.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                confettiEl.style.left = `${Math.random() * 100}vw`;
-                confettiEl.style.top = `${Math.random() * 100}vh`;
-                document.body.appendChild(confettiEl);
-
-                setTimeout(() => {
-                    confettiEl.remove();
-                }, duration);
-
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
-            }());
+            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/75f1f82f0ccefb665012970fb00072e2607f291b/IMG_3216.jpeg?raw=true')";
+            document.body.style.backgroundSize = "cover";
         }
 
     </script>
