@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hey Sexy, Will You Be My Girlfriend?</title>
+    <title>Will You Be My Girlfriend?</title>
     <style>
         body {
             background-color: pink;
@@ -70,8 +70,8 @@
 </head>
 <body>
 
-    <h1>Hey sexy, do you want to be my girlfriend?</h1>
-    <div class="button-container">
+    <h1 id="title">Hey sexy, do you want to be my girlfriend?</h1>
+    <div class="button-container" id="button-container">
         <button class="floating-btn yes-btn" onclick="yipeee()">Yes :)</button>
         <button class="floating-btn no-btn">No :(</button>
     </div>
@@ -82,16 +82,22 @@
       frameborder="0"></iframe>
 
     <script>
-        const yesButton = document.querySelector('.yes :)-btn');
-        const noButton = document.querySelector('.no :(-btn');
+        const yesButton = document.querySelector('.yes-btn');
+        const noButton = document.querySelector('.no-btn');
+        const title = document.getElementById('title');
+        const buttonContainer = document.getElementById('button-container');
 
         // Change background when "Yes" is clicked
         function yipeee() {
             alert("Yipeeee!");
-            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/8c10301958f824eb3035761143ccf019f3ed358b/IMG_3197.jpeg?raw=true')";
-            document.body.style.backgroundSize = "contain";  // Ensure image fits within the screen
+            document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/GermanBezukh/girlfriend/main/IMG_3197.jpeg')";
+            document.body.style.backgroundSize = "150%";  // Zoom out the image
             document.body.style.backgroundRepeat = "no-repeat";  // Disable repeat
             document.body.style.backgroundPosition = "center top";  // Move the image upwards
+            
+            // Hide the title and buttons
+            title.style.display = 'none';
+            buttonContainer.style.display = 'none';
         }
 
     </script>
