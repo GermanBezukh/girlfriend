@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            background-color: pink;
+            background-image: url('https://cdn.pixabay.com/photo/2016/03/31/18/43/heart-1294821_960_720.png');
+            background-repeat: repeat;
+            background-size: 100px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px red;
+        }
+
+        .button-container {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .floating-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .no-btn {
+            animation-direction: alternate;
+        }
+
+        @keyframes float {
+            0% { top: 0; left: 0; }
+            25% { top: 20px; left: 200px; }
+            50% { top: 100px; left: 50px; }
+            75% { top: 150px; left: 150px; }
+            100% { top: 0; left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Be My Girlfriend?</h1>
+    <div class="button-container">
+        <button class="floating-btn yes-btn" onclick="yipeee()">Yes</button>
+        <button class="floating-btn no-btn">No</button>
+    </div>
+
+    <script>
+        const yesButton = document.querySelector('.yes-btn');
+        const noButton = document.querySelector('.no-btn');
+
+        // Make the "No" button harder to click
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        function yipeee() {
+            alert("Yipeeee!");
+        }
+    </script>
+</body>
+</html>
 
