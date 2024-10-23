@@ -37,11 +37,13 @@
             background-color: red;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             font-size: 18px;
             border-radius: 50%;  /* Make buttons circular */
             cursor: pointer;
             position: absolute;
+            width: 60px;  /* Fixed width for circular shape */
+            height: 60px; /* Fixed height for circular shape */
         }
 
         .yes-btn {
@@ -86,7 +88,7 @@
         function yipeee() {
             alert("Yipeeee!");
             document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/GermanBezukh/girlfriend/main/IMG_3197.jpeg')";
-            document.body.style.backgroundSize = "150%";  // Zoom out the image
+            document.body.style.backgroundSize = "contain";  // Set the image to contain
             document.body.style.backgroundRepeat = "no-repeat";  // Disable repeat
             document.body.style.backgroundPosition = "center top";  // Move the image upwards
             
