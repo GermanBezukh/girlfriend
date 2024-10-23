@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+]<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,11 +37,17 @@
             background-color: red;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 20px;
             font-size: 18px;
-            border-radius: 10px;
+            border-radius: 50%; /* Make the button circular */
             cursor: pointer;
             position: absolute;
+            width: 80px; /* Width and height are equal for circular shape */
+            height: 80px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .yes-btn {
@@ -70,10 +76,10 @@
 </head>
 <body>
 
-    <h1>Hey Sexy, do you want to be my girlfriend?</h1>
+    <h1>Will You Be My Girlfriend?</h1>
     <div class="button-container">
-        <button class="floating-btn yes-btn" onclick="yipeee()">Yes:)</button>
-        <button class="floating-btn no-btn">No:(</button>
+        <button class="floating-btn yes-btn" onclick="yipeee()">Yes</button>
+        <button class="floating-btn no-btn">No</button>
     </div>
 
     <!-- YouTube Background Music -->
@@ -88,7 +94,7 @@
         // Change background when "Yes" is clicked
         function yipeee() {
             alert("Yipeeee!");
-            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/8a0970e0c48d817f33a140923e7e596ae5939dc9/IMG_3197.jpeg')";
+            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/8a0970e0c48d817f33a140923e7e596ae5939dc9/IMG_3197.jpeg?raw=true')";
             document.body.style.backgroundSize = "cover";
         }
 
