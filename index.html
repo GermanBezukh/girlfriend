@@ -37,17 +37,11 @@
             background-color: red;
             color: white;
             border: none;
-            padding: 20px;
+            padding: 10px 20px;
             font-size: 18px;
-            border-radius: 50%; /* Make the button circular */
+            border-radius: 10px;
             cursor: pointer;
             position: absolute;
-            width: 80px; /* Width and height are equal for circular shape */
-            height: 80px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .yes-btn {
@@ -78,8 +72,8 @@
 
     <h1>Will You Be My Girlfriend?</h1>
     <div class="button-container">
-        <button class="floating-btn yes-btn" onclick="yipeee()">Yes:)</button>
-        <button class="floating-btn no-btn">No:)</button>
+        <button class="floating-btn yes-btn" onclick="yipeee()">Yes</button>
+        <button class="floating-btn no-btn">No</button>
     </div>
 
     <!-- YouTube Background Music -->
@@ -91,10 +85,10 @@
         const yesButton = document.querySelector('.yes-btn');
         const noButton = document.querySelector('.no-btn');
 
-        // Change background when "Yes:)" is clicked
+        // Change background when "Yes" is clicked
         function yipeee() {
             alert("Yipeeee!");
-            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/174ffac638eb5d51cd0558692e66eb8b7c75ac42/IMG_3197.jpeg')";
+            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/174ffac638eb5d51cd0558692e66eb8b7c75ac42/IMG_3197.jpeg?raw=true')";
             document.body.style.backgroundSize = "cover";
         }
 
