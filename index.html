@@ -17,6 +17,7 @@
             height: 100vh;
             margin: 0;
             position: relative;
+            overflow: hidden; /* To ensure buttons don't go off the screen */
         }
 
         h1 {
@@ -41,19 +42,29 @@
             border-radius: 10px;
             cursor: pointer;
             position: absolute;
-            animation: float 3s ease-in-out infinite;
+        }
+
+        .yes-btn {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* Varied floating movement for the Yes button */
+        @keyframes float {
+            0% { top: 0; left: 0; }
+            20% { top: 50px; left: 100px; }
+            40% { top: 100px; left: -50px; }
+            60% { top: 150px; left: 200px; }
+            80% { top: 50px; left: 50px; }
+            100% { top: 0; left: 0; }
         }
 
         .no-btn {
-            animation-direction: alternate;
+            background-color: gray;
         }
 
-        @keyframes float {
-            0% { top: 0; left: 0; }
-            25% { top: 20px; left: 200px; }
-            50% { top: 100px; left: 50px; }
-            75% { top: 150px; left: 150px; }
-            100% { top: 0; left: 0; }
+        /* Hide the embedded YouTube iframe */
+        iframe {
+            display: none;
         }
     </style>
 </head>
@@ -65,21 +76,47 @@
         <button class="floating-btn no-btn">No</button>
     </div>
 
+    <!-- YouTube Background Music -->
+    <iframe id="ytplayer" type="text/html" width="0" height="0"
+      src="https://www.youtube.com/embed/0jwSky_wXIU?autoplay=1&loop=1&playlist=0jwSky_wXIU"
+      frameborder="0"></iframe>
+
     <script>
         const yesButton = document.querySelector('.yes-btn');
         const noButton = document.querySelector('.no-btn');
 
-        // Make the "No" button harder to click
-        noButton.addEventListener('mouseover', () => {
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            noButton.style.transform = `translate(${x}px, ${y}px)`;
-        });
-
+        // Confetti effect when "Yes" is clicked
         function yipeee() {
             alert("Yipeeee!");
+            confetti();
         }
+
+        // Confetti function
+        function confetti() {
+            const duration = 5 * 1000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+                // Generate random confetti on the page
+                const confettiEl = document.createElement('div');
+                confettiEl.style.position = 'absolute';
+                confettiEl.style.width = '10px';
+                confettiEl.style.height = '10px';
+                confettiEl.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiEl.style.left = `${Math.random() * 100}vw`;
+                confettiEl.style.top = `${Math.random() * 100}vh`;
+                document.body.appendChild(confettiEl);
+
+                setTimeout(() => {
+                    confettiEl.remove();
+                }, duration);
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
     </script>
 </body>
 </html>
-
