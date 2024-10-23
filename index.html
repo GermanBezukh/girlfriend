@@ -88,8 +88,10 @@
         // Change background when "Yes" is clicked
         function yipeee() {
             alert("Yipeeee!");
-            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/8c10301958f824eb3035761143ccf019f3ed358b/IMG_3197.jpeg')";
-            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundImage = "url('https://github.com/GermanBezukh/girlfriend/blob/8c10301958f824eb3035761143ccf019f3ed358b/IMG_3197.jpeg?raw=true')";
+            document.body.style.backgroundSize = "contain";  // Make image fit the screen
+            document.body.style.backgroundRepeat = "no-repeat";  // Ensure it doesn't repeat
+            document.body.style.backgroundPosition = "center";  // Center the image
         }
 
     </script>
